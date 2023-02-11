@@ -1,8 +1,8 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
-namespace MusicShop_WebApp.Entities
+namespace MusicShopWebApp.Entities
 {
     public class Order
     {
@@ -18,15 +18,15 @@ namespace MusicShop_WebApp.Entities
         public virtual ApplicationUser User { get; set; }
         [Required]
         public int Quantity { get; set; }
-        [Range(1, 10000)]
+        [Range(0, 10000)]
         public decimal Price { get; set; }
-        [Range(1,100)]
+        [Range(0, 100)]
         public decimal Discount { get; set; }
         public decimal TotalPrice
         {
             get
             {
-                return Quantity * Price - Quantity * Price * Discount / 100;   
+                return Quantity * Price - Quantity * Price * Discount / 100;
             }
         }
     }

@@ -1,6 +1,6 @@
 using System;
 
-namespace MusicShop_WebApp.Models
+namespace MusicShopWebApp.Models
 {
     public class ErrorViewModel
     {

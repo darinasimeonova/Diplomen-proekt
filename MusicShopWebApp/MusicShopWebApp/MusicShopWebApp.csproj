@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>aspnet-MusicShop_WebApp-5011f642-dc7f-4e7d-b0de-bdd045937e34</UserSecretsId>
+    <UserSecretsId>aspnet-MusicShopWebApp-3c2e0c8e-0b49-4d25-9e91-3a41242fba35</UserSecretsId>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
   </PropertyGroup>
 

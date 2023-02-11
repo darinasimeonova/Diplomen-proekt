@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MusicShop_WebApp.Entities;
+using MusicShopWebApp.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MusicShop_WebApp.Data
+namespace MusicShopWebApp.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MusicShop_WebApp.Entities
+namespace MusicShopWebApp.Entities
 {
     public class Product
     {
@@ -23,9 +21,9 @@ namespace MusicShop_WebApp.Entities
         [Range(0, 5000)]
         public int Quantity { get; set; }
         [Required]
-        [Range(1,5000)]
+        [Range(0, 5000)]
         public decimal Price { get; set; }
-        [Range(1, 100)]
+        [Range(0, 100)]
         public decimal Discount { get; set; }
         public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();
     }

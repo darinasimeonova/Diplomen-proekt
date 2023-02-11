@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace MusicShop_WebApp.Entities
+namespace MusicShopWebApp.Entities
 {
     public class Category
     {

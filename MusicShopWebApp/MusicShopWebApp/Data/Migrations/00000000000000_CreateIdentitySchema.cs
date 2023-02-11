@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace MusicShop_WebApp.Data.Migrations
+namespace MusicShopWebApp.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
