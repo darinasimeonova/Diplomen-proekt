@@ -18,7 +18,9 @@ namespace MusicShop_WebApp.Entities
         public virtual ApplicationUser User { get; set; }
         [Required]
         public int Quantity { get; set; }
+        [Range(1, 10000)]
         public decimal Price { get; set; }
+        [Range(1,100)]
         public decimal Discount { get; set; }
         public decimal TotalPrice
         {

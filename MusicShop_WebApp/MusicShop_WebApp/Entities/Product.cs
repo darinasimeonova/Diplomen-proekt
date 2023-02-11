@@ -23,7 +23,9 @@ namespace MusicShop_WebApp.Entities
         [Range(0, 5000)]
         public int Quantity { get; set; }
         [Required]
+        [Range(1,5000)]
         public decimal Price { get; set; }
+        [Range(1, 100)]
         public decimal Discount { get; set; }
         public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();
     }
