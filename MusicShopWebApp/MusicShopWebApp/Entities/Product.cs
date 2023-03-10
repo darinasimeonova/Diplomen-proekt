@@ -13,6 +13,7 @@ namespace MusicShopWebApp.Entities
         public int BrandId { get; set; }
         public virtual Brand Brand { get; set; }
         [Required]
+        public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
         [Required]
         public string Picture { get; set; }
