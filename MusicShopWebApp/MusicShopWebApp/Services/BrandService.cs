@@ -17,18 +17,17 @@ namespace MusicShopWebApp.Services
 
         public Brand GetBrandById(int brandId)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            return _context.Brands.Find(brandId);
         }
 
         public List<Brand> GetBrands()
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
+            List<Brand> brands = _context.Brands.ToList();
+            return brands;
         }
 
-        public Brand GetDesignerById(int designerId)
-        {
-            return _context.Brands.Find(designerId);
-        }
 
         public List<Brand> GetDesigners()
         {

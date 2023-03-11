@@ -17,6 +17,8 @@ namespace MusicShopWebApp.Entities
         public virtual Category Category { get; set; }
         [Required]
         public string Picture { get; set; }
+        [Required]
+        public string Description { get; set; }
 
         [Required]
         [Range(0, 5000)]

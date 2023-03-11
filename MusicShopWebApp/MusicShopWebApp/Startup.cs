@@ -48,11 +48,13 @@ namespace MusicShopWebApp
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            
+            services.AddControllersWithViews();
+            services.AddTransient<IProductService, ProductService>();
 
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IBrandService, BrandService>();
 
-            services.AddControllersWithViews();
             services.AddRazorPages();
             services.Configure<IdentityOptions>(option =>
             {

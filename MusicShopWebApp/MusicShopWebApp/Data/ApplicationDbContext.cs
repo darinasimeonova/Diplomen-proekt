@@ -4,6 +4,7 @@ using MusicShopWebApp.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MusicShopWebApp.Models.Product;
 
 namespace MusicShopWebApp.Data
 {
@@ -18,6 +19,7 @@ namespace MusicShopWebApp.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<MusicShopWebApp.Models.Product.ProductCreateVM> ProductCreateVM { get; set; }
 
     }
 }

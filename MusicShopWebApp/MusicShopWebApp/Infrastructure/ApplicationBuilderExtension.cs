@@ -22,8 +22,8 @@ namespace MusicShopWebApp.Infrastructure
 
             var dataCategory = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedCategories(dataCategory);
-            var dataDesigner = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            SeedDesigners(dataDesigner);
+            var dataBrand = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            SeedBrands(dataBrand);
 
             return app;
         }
@@ -71,27 +71,27 @@ namespace MusicShopWebApp.Infrastructure
             dataCategory.Categories.AddRange(new[]
             {
                 new Category {CategoryName="Guitars"},
-                new Category {CategoryName="Percussion instruments"},
+                new Category {CategoryName="Percussion instruments"}, 
                 new Category {CategoryName="Keyboard instruments"},
                 new Category {CategoryName="Orchestral instruments"},
                 new Category {CategoryName="Accessories"}
             });
             dataCategory.SaveChanges();
         }
-        private static void SeedDesigners(ApplicationDbContext dataDesigner)
+        private static void SeedBrands(ApplicationDbContext dataBrands)
         {
-            if (dataDesigner.Brands.Any())
+            if (dataBrands.Brands.Any())
             {
                 return;
             }
-            dataDesigner.Brands.AddRange(new[]
+            dataBrands.Brands.AddRange(new[]
             {
                 new Brand {BrandName="YAMAHA"},
                 new Brand {BrandName="SAMSON"},
                 new Brand {BrandName="IBANEZ"},
                 new Brand {BrandName="STAGG"}
             });
-            dataDesigner.SaveChanges();
+            dataBrands.SaveChanges();
         }
 
     }
