@@ -20,6 +20,10 @@ namespace MusicShopWebApp.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<MusicShopWebApp.Models.Product.ProductCreateVM> ProductCreateVM { get; set; }
+        public DbSet<MusicShopWebApp.Models.Product.ProductIndexVM> ProductIndexVM { get; set; }
+        public DbSet<MusicShopWebApp.Models.Product.ProductEditVM> ProductEditVM { get; set; }
+        public DbSet<MusicShopWebApp.Models.Product.ProductDetailsVM> ProductDetailsVM { get; set; }
+        public DbSet<MusicShopWebApp.Models.Product.ProductDeleteVM> ProductDeleteVM { get; set; }
 
     }
 }

@@ -15,13 +15,13 @@ namespace MusicShopWebApp.Services
         {
             _context = context;
         }
-        public bool Create(string name, int categoryId, int designerId, string description, string picture, decimal price, int quantity, decimal discount)
+        public bool Create(string name, int categoryId, int brandId, string description, string picture, decimal price, int quantity, decimal discount)
         {
             Product item = new Product
             {
                 ProductName = name,
                 Category = _context.Categories.Find(categoryId),
-                Brand = _context.Brands.Find(designerId),
+                Brand = _context.Brands.Find(brandId),
                 Description = description,
                 Picture = picture,
                 Price = price,
@@ -43,20 +43,20 @@ namespace MusicShopWebApp.Services
             return products;
         }
 
-        public List<Product> GetProducts(string searchStringCategoryName, string searchStringDesignerName)
+        public List<Product> GetProducts(string searchStringCategoryName, string searchStringBrandName)
         {
             List<Product> products = _context.Products.ToList();
-            if (!String.IsNullOrEmpty(searchStringCategoryName) && !String.IsNullOrEmpty(searchStringDesignerName))
+            if (!String.IsNullOrEmpty(searchStringCategoryName) && !String.IsNullOrEmpty(searchStringBrandName))
             {
-                products = products.Where(x => x.Category.CategoryName.ToLower().Contains(searchStringCategoryName.ToLower()) && x.Brand.BrandName.ToLower().Contains(searchStringDesignerName.ToLower())).ToList();
+                products = products.Where(x => x.Category.CategoryName.ToLower().Contains(searchStringCategoryName.ToLower()) && x.Brand.BrandName.ToLower().Contains(searchStringBrandName.ToLower())).ToList();
             }
             else if (!String.IsNullOrEmpty(searchStringCategoryName))
             {
                 products = products.Where(x => x.Category.CategoryName.ToLower().Contains(searchStringCategoryName.ToLower())).ToList();
             }
-            else if (!String.IsNullOrEmpty(searchStringDesignerName))
+            else if (!String.IsNullOrEmpty(searchStringBrandName))
             {
-                products = products.Where(x => x.Brand.BrandName.ToLower().Contains(searchStringDesignerName.ToLower())).ToList();
+                products = products.Where(x => x.Brand.BrandName.ToLower().Contains(searchStringBrandName.ToLower())).ToList();
             }
             return products;
         }
@@ -72,7 +72,7 @@ namespace MusicShopWebApp.Services
             return _context.SaveChanges() != 0;
         }
 
-        public bool Update(int productId, string name, int categoryId, int designerId, string description, string picture, decimal price, int quantity, decimal discount)
+        public bool Update(int productId, string name, int categoryId, int brandId, string description, string picture, decimal price, int quantity, decimal discount)
         {
             var product = GetProductById(productId);
             if (product == default(Product))
@@ -83,7 +83,7 @@ namespace MusicShopWebApp.Services
             //product.CategoryId = categoryId;
             //product.BrandId = brandId;
             product.Category = _context.Categories.Find(categoryId);
-            product.Brand = _context.Brands.Find(designerId);
+            product.Brand = _context.Brands.Find(brandId);
             product.Description = description;
             product.Picture = picture;
             product.Price = price;
