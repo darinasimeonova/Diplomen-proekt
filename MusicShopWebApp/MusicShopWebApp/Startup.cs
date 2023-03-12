@@ -55,6 +55,9 @@ namespace MusicShopWebApp
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IBrandService, BrandService>();
 
+            services.AddTransient<IStatisticsService, StatisticsService>();
+
+
             services.AddRazorPages();
             services.Configure<IdentityOptions>(option =>
             {
